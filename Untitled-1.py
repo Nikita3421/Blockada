@@ -1,7 +1,39 @@
 from pygame import *
 
 
-class Player(Settings):
+class Enemy(Settings):
+    def __init__(self, x, y, w, h, speed, img, side):
+        Settings.__init__(self, x, y, w, h, speed, img)
+
+
+        self.side = side
+
+    def update(self):
+        global side
+
+        if self.side == "right":
+            self.rect.x -= self.speed
+        if self.side == "left":
+            self.rect.x += self.speed
+win_width = 1280
+win_height = 720
+window = display.set_mode((win_width, win_height))
+display.set_caption("Maze_defection")
+background = transform.scale(image.load("Fone.jpg"), (win_width, win_height))
+window.blit(background,(0,0))
+clock = time.Clock()
+game = True
+FPS = 60
+while game:
+    for e in event.get():
+        if e.type == QUIT:
+            game = False
+    display.update()
+    clock.tick(FPS) 
+    
+    
+   
+    class Player(Settings):
 
     def r_l(self):
         global mana, img, f
@@ -27,22 +59,3 @@ class Player(Settings):
             self.rect -= self.speed
         if keys [K_s]:
             self.rect += self.speed     
-win_width = 1280
-win_height = 720
-window = display.set_mode((win_width, win_height))
-display.set_caption("Maze_defection")
-background = transform.scale(image.load("Fone.jpg"), (win_width, win_height))
-window.blit(background,(0,0))
-clock = time.Clock()
-game = True
-FPS = 60
-while game:
-    for e in event.get():
-        if e.type == QUIT:
-            game = False
-    display.update()
-    clock.tick(FPS) 
-    
-    
-   
-
