@@ -1,4 +1,5 @@
 from pygame import *
+#список уровня
 level = [
     "                                       ",
     "----------                    ---------",
@@ -16,7 +17,7 @@ level = [
 level_width  = len(level[0])*40 # прораховуємо ширину рівня
 level_height = len(level)*40    # прораховуємо висоту рівня
 
-
+# Главный класс
 class Settings(sprite.Sprite):
     def __init__(self, x, y, w, h, speed, img):
         super().__init__()
@@ -31,7 +32,7 @@ class Settings(sprite.Sprite):
     def reset(self): 
         window.blit(self.image, (self.rect.x, self.rect.y))
 
-
+# Класс кнопок
 class Button():
     def __init__(self, color, x, y, w, h, text, fsize, txt_color):
 
@@ -57,7 +58,7 @@ class Button():
         window.blit(self.txt_image, (self.rect.x +
                     shift_x, self.rect.y + shift_y))
 
-
+# Класс врагов
 class Enemy(Settings):
     def __init__(self, x, y, w, h, speed, img, side):
         Settings.__init__(self, x, y, w, h, speed, img)
@@ -72,7 +73,7 @@ class Enemy(Settings):
         if self.side == "left":
             self.rect.x += self.speed
 
-
+# Класс главный герой 
 class Player(Settings):
 
     def r_l(self):
@@ -101,7 +102,7 @@ class Player(Settings):
             self.rect -= self.speed
         if keys[K_s]:
             self.rect += self.speed
-
+# Класс камера и функция к ней
 class Camera(object):
 
     def __init__(self, camera_func, width, height):
@@ -127,7 +128,7 @@ class Camera(object):
         t = min(0, t)
 
     return Rect(1, t, w, h)
-
+#  Музыка
 mixer.init()
 fire_s = mixer.Sound('sounds/fire.ogg')
 kick = mixer.Sound('sounds/kick.ogg')
@@ -139,7 +140,7 @@ click = mixer.Sound('sounds/click.ogg')
 cst_o = mixer.Sound('sounds/chest.ogg')
             
 
-
+# Создание окна
 win_width = 1280
 win_height = 720
 window = display.set_mode((win_width, win_height))
@@ -151,8 +152,9 @@ display.set_caption("Maze_defection")
 clock = time.Clock()
 game = True
 FPS = 60
-# добавляем текст
+# добавляем текст в игре
 
+# Переменные картинок
 hero_r = "images/sprite1_r.png"#1
 hero_l = "images/sprite1.png"#1
 enemy_l = "images/cyborg.png"#1
@@ -181,6 +183,8 @@ chest = Settings(450, 130, 80, 80, 0, chest_close)
 
 # camera = Camera(camera_configure, level_width, level_height)
 # создаем кнопки
+
+# Создание списков и групп спрайтов (перенести в функцию перезапуска
 blocks_r = []
 blocks_l = []
 coins = []
@@ -188,7 +192,7 @@ stairs = []
 platforms = []
 
 items = sprite.Group()
-
+# Рисуем уровень (перенести в функцию перезапуска
 x = y = 0
 for r in level:
 
@@ -231,7 +235,9 @@ for r in level:
 
     y += 40
     х = 0
-
+# Функция перезапуска игры
+# Создание спрайтов (перенести в функцию перезапуска
+# Добавляем спрайты в группу
 while game:
     time.delay(15)
     window.blit(background, (0, 0))
@@ -301,6 +307,14 @@ while game:
     #поднимаемся по лестнице
     #Собираем ключи
     #открываем двери Миша
-    # дописать
+    # открываем сундук 
+    # касание портала
+    # Удаляем врагов
+    
     display.update()
     clock.tick(FPS)            
+#Функция меню
+# Правила игры
+# Пауза в игре
+# Перезапуск игры
+# Уровень пройден
