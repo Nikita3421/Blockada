@@ -339,7 +339,7 @@ for r in level:
         x += 40
 
     y += 40
-    х = 0
+    x = 0
 
 while game:
 
