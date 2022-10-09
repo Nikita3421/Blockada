@@ -1,17 +1,18 @@
 from pygame import *
 level = [
-    "                                       ",
-    "----------                    ---------",
-    "                  oo                   ",
-    "              o        o           o   ",
-    "-----         ----------          -----",
-    "  o                                    ",
-    "                                       ",
-    " ----------                  ----------",
-    "                                       ",
-    "             o                         ",
-    "                  o                    ",
-    "---------------------------------------"]
+    "r                                                                    .",
+    "r                                                                    .",
+    "r                                                                    .",
+    "r     °  °                                         °  °  °           .",
+    "rr              l                             r                l     .",
+    "r  ------------                                ---------------       .",
+    "rr / l                                       r / l         r / l     .",
+    "rr   l°                                 °  ° r   l         r   l     .",
+    "rr        l                       r              l   r         l     .",
+    "r  ----- --                         ------------       -------       .",
+    "r     r / l                                          r / l           .",
+    "r     r l                                          r   l             .",
+    "-------- ---                        ----------------------------------"]
 
 level_width = len(level[0])*40  # прораховуємо ширину рівня
 level_height = len(level)*40    # прораховуємо висоту рівня
@@ -264,14 +265,14 @@ btn_pause = Button((178, 34, 34), 1200, 15, 50, 50,
 
 hero = Player(300, 650, 50, 50, 5, hero_l)
 
-en1 = Enemy(420, 480, 50, 50, 3, enemy_l, 'left')
-en2 = Enemy(230, 320, 50, 50, 3, enemy_l, 'left')
+en1 = Enemy(380, 414, 100, 75, 3, enemy_l, 'left')
+en2 = Enemy(330, 293, 100, 75, 3, enemy_l, 'left')
 
-door = Settings(1000, 580, 40, 120, 0, door_img)
-key1 = Settings(160, 350, 50, 20, 0, key_img)
-key2 = Settings(1500, 350, 50, 20, 0, key_img)
+door = Settings(1000, 560, 60, 120, 0, door_img)
+key1 = Settings(170, 335, 50, 20, 0, key_img)
+key2 = Settings(1500, 335, 50, 20, 0, key_img)
+chest = Settings(500, 150, 60, 60, 0, chest_close)
 portal = Settings(2700, 600, 100, 100, 0, port)
-chest = Settings(450, 130, 80, 80, 0, chest_close)
 
 camera = Camera(camera_configure, level_width, level_height)
 
