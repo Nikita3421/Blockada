@@ -224,8 +224,8 @@ chest_open = "images/cst_open.png"  # 1
 chest_close = "images/cst_close.png"  # 1
 stair = "images/stair.png"  # 1
 port = "images/portal.png"  # 1
-platform = "images/platform.png"  # 1
-# nothing = "images/nothing.png"  # 0
+platform = "images/platform.png"  # 1 
+nothing = "images/nothing.png"  # 1
 power = "images/mana.png"  # 1
 
 font.init()
