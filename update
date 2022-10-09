@@ -1,0 +1,28 @@
+level = [
+    "r                                                                    .",
+    "r                                                                    .",
+    "r                                                                    .",
+    "r     °  °                                         °  °  °           .",
+    "rr              l                             r                l     .",
+    "r  ------------                                ---------------       .",
+    "rr / l                                       r / l         r / l     .",
+    "rr   l°                                 °  ° r   l         r   l     .",
+    "rr        l                       r              l   r         l     .",
+    "r  ----- --                         ------------       -------       .",
+    "r     r / l                                          r / l           .",
+    "r     r l                                          r   l             .",
+    "-------- ---                        ----------------------------------"]
+    
+enemy_l = "images/cyborg_r.png"  # 1
+enemy_r = "images/cyborg.png"  # 1
+
+hero = Player(150, 560, 80, 120, 5, hero_l)
+
+en1 = Enemy(380, 414, 100, 75, 3, enemy_l, 'left')
+en2 = Enemy(330, 293, 100, 75, 3, enemy_l, 'left')
+
+door = Settings(1000, 560, 60, 120, 0, door_img)
+key1 = Settings(170, 335, 50, 20, 0, key_img)
+key2 = Settings(1500, 335, 50, 20, 0, key_img)
+chest = Settings(500, 150, 60, 60, 0, chest_close)
+portal = Settings(2700, 600, 100, 100, 0, port)
