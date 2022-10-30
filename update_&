@@ -1,0 +1,20 @@
+    if sprite.collide_rect(hero, door) and k_door == False:
+        window.blit(k_need, (450, 50))
+        hero.rect.x = door.rect.x - 100
+
+    if sprite.collide_rect(hero, door) and k_door == True:
+        hero.rect.x = door.rect.x - 100
+        window.blit(e_tap, (500, 50))
+
+
+---------------------------------------------------------
+    for s in stairs:
+        if sprite.spritecollide(s, manas, True): 
+            items.remove(mana)
+
+        if sprite.collide_rect(hero, s):
+            hero.u_d()
+            if hero.rect.y <= (s.rect.y - 40):
+                hero.rect.y = s.rect.y - 40
+            if hero.rect.y >= (s.rect.y + 130):
+                hero.rect.y = s.rect.y + 130
